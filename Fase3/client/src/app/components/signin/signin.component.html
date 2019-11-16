@@ -1,0 +1,19 @@
+<div class="col-md-4 offset-md-4">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label class="col-form-label" for="inputDefault">Carnet</label>
+                    <input type="text" name="carnet" class="form-control" [(ngModel)]="estudiante.CarnetEstudiante" placeholder="Carnet" id="inputDefault">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label" for="inputDefault">Password</label>
+                    <input type="text" name="nombre" class="form-control" [(ngModel)]="estudiante.contra" placeholder="Nombre" id="inputDefault">
+                </div>
+                <button class="btn btn-success btn-block" (click)="login(estudiante.CarnetEstudiante,estudiante.contra)">
+                    Login
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
