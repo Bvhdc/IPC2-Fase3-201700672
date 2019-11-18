@@ -6,7 +6,11 @@ class AsignacionAuxController{
        const users= await pool.query('SELECT * FROM AsignacionAuxiliar');
        res.json(users);
     }
-
+    public async listall (req:Request,res:Response)  {
+        const users= await pool.query('SELECT Curso.CodigoCurso,Auxiliar.CarnetAuxiliar,Auxiliar.Nombre,Curso.NombreCurso,Curso.seccion FROM AsignacionAuxiliar,Auxiliar,Curso where AsignacionAuxiliar.CodigoCurso=Curso.CodigoCurso and AsignacionAuxiliar.CarnetAuxiliar=Auxiliar.CarnetAuxiliar ');
+        res.json(users);
+     }
+ 
     public async getOne (req:Request,res:Response)  {
         const { id }=req.params;
         const users=await pool.query('SELECT * FROM AsignacionAuxiliar WHERE CarnetAuxiliar= ?',[id]);

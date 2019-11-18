@@ -4,17 +4,17 @@
             {{aux.CarnetAuxiliar}}
         <button class="btn btn-danger" (click)="deleteAux(aux.CarnetAuxiliar)">
             <i class="fas fa-trash-alt"></i>
-        </button>           
+        </button>
         </div>
         <div class="card-body">
             <p>
-                {{aux.Nombre}}
+               Nombre: {{aux.Nombre}}
             </p>
             <p>
-                {{aux.CorreoElectronico}}
+               Correo: {{aux.CorreoElectronico}}
             </p>
             <p>
-                {{aux.rol}}
+               Rol: {{aux.rol}}
             </p>
             <a [routerLink]="['/auxs/edit',aux.CarnetAuxiliar]" class="btn btn-info btn-block" >Editar Aux</a>
         </div>

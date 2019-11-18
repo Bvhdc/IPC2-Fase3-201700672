@@ -20,6 +20,12 @@ class AsignacionAuxController {
             res.json(users);
         });
     }
+    listall(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const users = yield database_1.default.query('SELECT Curso.CodigoCurso,Auxiliar.CarnetAuxiliar,Auxiliar.Nombre,Curso.NombreCurso,Curso.seccion FROM AsignacionAuxiliar,Auxiliar,Curso where AsignacionAuxiliar.CodigoCurso=Curso.CodigoCurso and AsignacionAuxiliar.CarnetAuxiliar=Auxiliar.CarnetAuxiliar ');
+            res.json(users);
+        });
+    }
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;

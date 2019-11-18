@@ -1,0 +1,25 @@
+<div>
+    <button class="btn btn-success" (click)="deleteAux(aux.CarnetAuxiliar)">Agregar Asignacion</button>
+</div>
+<div class="col-md-4" *ngFor="let asignacion of asignaciones">
+  <div class="card text-center">
+      <div class="card-header bg-success text-white  d-flex justify-content-between align-items-center">
+        {{asignacion.NombreCurso +" "+ asignacion.seccion}}
+      <button class="btn btn-danger" (click)="deleteAux(aux.CarnetAuxiliar)">
+          <i class="fas fa-trash-alt"></i>
+      </button>
+      </div>
+      <div class="card-body">
+          <p>
+             Nombre Aux: {{asignacion.Nombre}}
+          </p>
+          <p>
+             Correo: {{asignacion.NombreCurso}}
+          </p>
+          <p>
+             Rol: {{asignacion.seccion}}
+          </p>
+          <a  class="btn btn-info btn-block" >Editar Asignacion</a>
+      </div>
+  </div>
+</div>

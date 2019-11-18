@@ -11,7 +11,7 @@ class AsignacionAuxRoutes {
         this.config();
     }
     config() {
-        this.router.get('/', asignacionAuxController_1.default.list);
+        this.router.get('/', asignacionAuxController_1.default.listall);
         this.router.get('/:id', asignacionAuxController_1.default.getOne);
         this.router.post('/', asignacionAuxController_1.default.create);
         this.router.delete('/:id', asignacionAuxController_1.default.delete);

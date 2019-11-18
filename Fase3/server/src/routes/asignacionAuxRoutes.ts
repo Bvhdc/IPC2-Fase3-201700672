@@ -9,7 +9,7 @@ class AsignacionAuxRoutes{
     }
 
     config():void{
-        this.router.get('/',asignacionAuxController.list);
+        this.router.get('/',asignacionAuxController.listall);
         this.router.get('/:id',asignacionAuxController.getOne);
         this.router.post('/',asignacionAuxController.create)
         this.router.delete('/:id',asignacionAuxController.delete)

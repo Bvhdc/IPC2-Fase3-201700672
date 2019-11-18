@@ -14,7 +14,9 @@ import { AuxListComponent } from './components/aux-list/aux-list.component';
 import { CursoListComponent } from './components/curso-list/curso-list.component';
 import { CursoFormComponent } from './components/curso-form/curso-form.component';
 import { SigninComponent } from './components/signin/signin.component';
-import { NavigationEstudianteComponent } from './components/navigation-estudiante/navigation-estudiante.component'
+import { NavigationEstudianteComponent } from './components/navigation-estudiante/navigation-estudiante.component';
+import { AuxAsignacionComponent } from './components/aux-asignacion/aux-asignacion.component';
+import { AsignacionModalComponent } from './components/asignacion-modal/asignacion-modal.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,9 @@ import { NavigationEstudianteComponent } from './components/navigation-estudiant
     CursoListComponent,
     CursoFormComponent,
     SigninComponent,
-    NavigationEstudianteComponent
+    NavigationEstudianteComponent,
+    AuxAsignacionComponent,
+    AsignacionModalComponent
   ],
   imports: [
     BrowserModule,
