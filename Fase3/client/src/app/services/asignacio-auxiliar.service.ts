@@ -22,7 +22,7 @@ export class AsignacioAuxiliarService {
     return this.http.put(`${this.API_URL}/users/${id}`, updatedestudiante);
   }
   saveAsignacion(estudiante: any) {
-    return this.http.post(`${this.API_URL}/users`, estudiante);
+    return this.http.post(`${this.API_URL}/asignacion/auxiliar`, estudiante);
   }
   loginEstudiante(id, contra) {
     return this.http.get(`${this.API_URL}/users/${id}/${contra}`);

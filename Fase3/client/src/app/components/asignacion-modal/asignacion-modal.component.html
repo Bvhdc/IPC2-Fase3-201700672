@@ -2,16 +2,16 @@
 <div mat-dialog-content>
   <p>Asignacion</p>
   <mat-form-field>
-    <mat-label>Carnet auxiliar</mat-label>
-    <mat-select [(ngModel)]="data.CarnetAuxiliar" name='horario' multiple="" class="form-control" id="exampleSelect2">
-      <mat-option *ngFor="let aux of auxs" [value]="data.CarnetAuxiliar">{{aux.CarnetAuxiliar}}</mat-option>
-    </mat-select>
-  </mat-form-field>
+      <mat-label>Carnet auxiliar</mat-label>
+      <mat-select [(ngModel)]="data.CarnetAuxiliar" name='horario' multiple="" class="form-control" id="exampleSelect2">
+        <mat-option *ngFor="let aux of auxs" [value]="aux.CarnetAuxiliar">{{aux.Nombre}}</mat-option>
+      </mat-select>
+    </mat-form-field>
 
   <mat-form-field>
     <mat-label>Codigo curso</mat-label>
     <mat-select [(ngModel)]="data.CodigoCurso" name='horario' multiple="" class="form-control" id="exampleSelect2">
-    <mat-option *ngFor="let curso of cursos" [value]="data.CodigoCurso">{{curso.CodigoCurso}}</mat-option>
+    <mat-option *ngFor="let curso of cursos" [value]="curso.CodigoCurso">{{curso.CodigoCurso}}</mat-option>
     </mat-select>
   </mat-form-field>
 
@@ -20,5 +20,5 @@
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
 </div>

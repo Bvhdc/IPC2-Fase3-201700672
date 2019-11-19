@@ -10,8 +10,6 @@ import {AsignacionModalComponent} from '../asignacion-modal/asignacion-modal.com
 })
 export class AuxAsignacionComponent implements OnInit {
   asignaciones: any = [];
-  animal: string;
-  name: string;
   asignacion: any;
   constructor(private asignacionAux: AsignacioAuxiliarService, private dialog: MatDialog) { }
 
@@ -38,13 +36,15 @@ export class AuxAsignacionComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(AsignacionModalComponent, {
       width: '250px',
-      data: {name: this.name, animal: this.animal}
+      data: {}
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      this.saveNewAsignacion();
-      this.animal = result;
+      this.asignacion = result;
+      this.saveNewAsignacion()
+      console.log(result)
+
     });
   }
 
