@@ -18,7 +18,7 @@ import { NavigationEstudianteComponent } from './components/navigation-estudiant
 import { AuxAsignacionComponent } from './components/aux-asignacion/aux-asignacion.component';
 import { AsignacionModalComponent } from './components/asignacion-modal/asignacion-modal.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import {MatDialogModule,MatFormFieldModule,MatInputModule } from '@angular/material';
+import {MatDialogModule,MatFormFieldModule,MatInputModule,MatSelectModule } from '@angular/material';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +42,7 @@ import {MatDialogModule,MatFormFieldModule,MatInputModule } from '@angular/mater
     NoopAnimationsModule,
     MatDialogModule,
     MatFormFieldModule,
-    MatInputModule
+    MatSelectModule,
   ],
   providers: [
     EstudiantesService

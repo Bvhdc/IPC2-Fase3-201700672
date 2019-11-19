@@ -21,7 +21,7 @@ export class AsignacioAuxiliarService {
   updateEstudiante(id, updatedestudiante) {
     return this.http.put(`${this.API_URL}/users/${id}`, updatedestudiante);
   }
-  saveEstudiante(estudiante: any) {
+  saveAsignacion(estudiante: any) {
     return this.http.post(`${this.API_URL}/users`, estudiante);
   }
   loginEstudiante(id, contra) {

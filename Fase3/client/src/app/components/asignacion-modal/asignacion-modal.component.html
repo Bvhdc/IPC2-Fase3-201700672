@@ -1,17 +1,19 @@
 <h1 mat-dialog-title>Hi </h1>
 <div mat-dialog-content>
   <p>Asignacion</p>
-  <div>
-    <select [(ngModel)]="data.CarnetAuxiliar" name='horario' multiple="" class="form-control" id="exampleSelect2">
-      <option *ngFor="let aux of auxs" [ngValue]="data.CarnetAuxiliar">{{aux.CarnetAuxiliar}}</option>
-    </select>
-  </div>
+  <mat-form-field>
+    <mat-label>Carnet auxiliar</mat-label>
+    <mat-select [(ngModel)]="data.CarnetAuxiliar" name='horario' multiple="" class="form-control" id="exampleSelect2">
+      <mat-option *ngFor="let aux of auxs" [value]="data.CarnetAuxiliar">{{aux.CarnetAuxiliar}}</mat-option>
+    </mat-select>
+  </mat-form-field>
 
-  <div>
-    <select [(ngModel)]="data.CodigoCurso" name='horario' multiple="" class="form-control" id="exampleSelect2">
-    <option *ngFor="let curso of cursos" [ngValue]="data.CodigoCurso">{{curso.CodigoCurso}}</option>
-    </select>
-  </div>
+  <mat-form-field>
+    <mat-label>Codigo curso</mat-label>
+    <mat-select [(ngModel)]="data.CodigoCurso" name='horario' multiple="" class="form-control" id="exampleSelect2">
+    <mat-option *ngFor="let curso of cursos" [value]="data.CodigoCurso">{{curso.CodigoCurso}}</mat-option>
+    </mat-select>
+  </mat-form-field>
 
 
 

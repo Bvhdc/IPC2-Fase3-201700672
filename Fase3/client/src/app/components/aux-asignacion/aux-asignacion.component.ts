@@ -12,13 +12,13 @@ export class AuxAsignacionComponent implements OnInit {
   asignaciones: any = [];
   animal: string;
   name: string;
-
+  asignacion: any;
   constructor(private asignacionAux: AsignacioAuxiliarService, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.getAsignaciones();
   }
-  getAsignaciones():void {
+  getAsignaciones(): void {
     this.asignacionAux.getAsignaciones().subscribe(
       res => {console.log(res);
               this.asignaciones = res;
@@ -26,7 +26,15 @@ export class AuxAsignacionComponent implements OnInit {
       err => console.error(err)
     );
   }
-  deleteAux(id: String){}
+  deleteAux(id: String) {}
+  saveNewAsignacion() {
+    this.asignacionAux.saveAsignacion(this.asignacion)
+      .subscribe(
+        res => {console.log(res);
+                 },
+        err => console.error(err)
+      );
+  }
   openDialog(): void {
     const dialogRef = this.dialog.open(AsignacionModalComponent, {
       width: '250px',
@@ -35,6 +43,7 @@ export class AuxAsignacionComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
+      this.saveNewAsignacion();
       this.animal = result;
     });
   }
