@@ -1,1 +1,22 @@
-<p>asignacion-modal works!</p>
+<h1 mat-dialog-title>Hi </h1>
+<div mat-dialog-content>
+  <p>Asignacion</p>
+  <div>
+    <select [(ngModel)]="data.CarnetAuxiliar" name='horario' multiple="" class="form-control" id="exampleSelect2">
+      <option *ngFor="let aux of auxs" [ngValue]="data.CarnetAuxiliar">{{aux.CarnetAuxiliar}}</option>
+    </select>
+  </div>
+
+  <div>
+    <select [(ngModel)]="data.CodigoCurso" name='horario' multiple="" class="form-control" id="exampleSelect2">
+    <option *ngFor="let curso of cursos" [ngValue]="data.CodigoCurso">{{curso.CodigoCurso}}</option>
+    </select>
+  </div>
+
+
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
+</div>

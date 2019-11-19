@@ -4,23 +4,23 @@
             {{curso.CodigoCurso}}
         <button class="btn btn-danger" (click)="deleteCurso(curso.CodigoCurso)">
             <i class="fas fa-trash-alt"></i>
-        </button>           
+        </button>
         </div>
         <div class="card-body">
             <p>
-                {{curso.NombreCurso}}
+                Nombre:{{ curso.NombreCurso}}
             </p>
             <p>
-                {{curso.descripcion}}
+                Descripcion:{{ curso.descripcion}}
             </p>
             <p>
-                {{curso.seccion}}
+                Seccion:{{ curso.seccion}}
             </p>
             <p>
-                {{curso.CodigoHorario}}
+                CodHorario:{{ curso.CodigoHorario}}
             </p>
             <p>
-                {{curso.CodigoSemestre}}
+                CodSemestre:{{ curso.CodigoSemestre}}
             </p>
             <a [routerLink]="['/cursos/edit',curso.CodigoCurso]" class="btn btn-info btn-block" >Editar Curso</a>
         </div>
