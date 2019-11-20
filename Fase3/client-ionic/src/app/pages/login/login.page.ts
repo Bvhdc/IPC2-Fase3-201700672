@@ -39,13 +39,13 @@ export class LoginPage implements OnInit {
       }
     );
   } else if (this.tipo == 'Auxiliar') {
-    this.estudianteService.loginEstudiante(this.carnet, this.contra).subscribe(
+    this.auxiliarService.loginAux(this.carnet, this.contra).subscribe(
       res => {
         if (Object.keys(res).length > 0) {
-          this.estudianteService.userlogged = res;
+          this.auxiliarService.userlogged = res;
           this.usuario = res;
           if (this.usuario) {
-            this.NavCtrl.navigateForward('/user-tabs');
+            this.NavCtrl.navigateForward('/aux-tabs');
             console.log(this.estudianteService.userlogged);
           }
         } else {
