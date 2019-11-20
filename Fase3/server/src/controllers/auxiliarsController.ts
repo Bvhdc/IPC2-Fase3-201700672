@@ -15,6 +15,17 @@ class AuxiliarController{
         }else
         {res.status(404).json({text: 'User Doesnt Exist'});}
      }
+     public async login (req:Request,res:Response) {
+        const {carne} = req.params;
+        const {pass} = req.params;
+        const user=await pool.query('SELECT * FROM Auxiliar WHERE CarnetAuxiliar= ? AND Contra= ?',[carne,pass])                  
+        console.log(req.params)
+        
+        if (user.lenght = 1){
+            res.json(user[0]);
+        }else
+        {res.status(404).json({text: 'User Doesnt Exist'});}
+    }
     public async create(req:Request,res:Response){
         await pool.query('INSERT INTO Auxiliar set ?',[req.body]);
         

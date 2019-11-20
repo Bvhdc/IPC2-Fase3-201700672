@@ -8,6 +8,26 @@ const routes: Routes = [
     path: 'signup',
     loadChildren: () => import('./pages/signup/signup.module').then( m => m.SignupPageModule)
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'user',
+    loadChildren: () => import('./pages/user/user.module').then( m => m.UserPageModule)
+  },
+  {
+    path: 'user-tabs',
+    loadChildren: () => import('./pages/user-tabs/user-tabs.module').then( m => m.UserTabsPageModule)
+  },
+  {
+    path: 'aux-tabs',
+    loadChildren: () => import('./pages/aux-tabs/aux-tabs.module').then( m => m.AuxTabsPageModule)
+  },
+  {
+    path: 'aux',
+    loadChildren: () => import('./pages/aux/aux.module').then( m => m.AuxPageModule)
+  },
 ];
 
 @NgModule({

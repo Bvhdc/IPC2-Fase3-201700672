@@ -11,6 +11,7 @@ class AuxiliarsRoutes{
     config():void{
         this.router.get('/',auxiliarsController.list);
         this.router.get('/:id',auxiliarsController.getOne);
+        this.router.get('/:carne/:pass',auxiliarsController.login);
         this.router.post('/',auxiliarsController.create)
         this.router.delete('/:id',auxiliarsController.delete)
         this.router.put('/:id',auxiliarsController.update)

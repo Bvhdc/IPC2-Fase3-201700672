@@ -16,27 +16,27 @@
   <br />
 
   <ion-text color="light">
-    <strong>Nombre(s)</strong>
+    <strong>Carnet</strong>
   </ion-text>
-  <ion-input type="text" [(ngModel)]='usuario.Nombre' name='nombreinput' color="light" placeholder="Alexander" ></ion-input>
+  <ion-input type="text" [(ngModel)]='usuario.CarnetEstudiante' name='nombreinput' color="light" placeholder="Alexander" ></ion-input>
   <br/>
         
   <ion-text color="light">
-    <strong>Apellido(s)</strong>
+    <strong>Nombre(s)</strong>
   </ion-text>
-  <ion-input type="text" [(ngModel)]='usuario.Apellido' name='nombreinput' color="light" placeholder="De la Fuente"></ion-input>
+  <ion-input type="text" [(ngModel)]='usuario.Nombre' name='nombreinput' color="light" placeholder="De la Fuente"></ion-input>
   <br/>
 
   <ion-text color="light">
-    <strong> Nombre Usuario</strong>
+    <strong> Correo</strong>
   </ion-text>
-  <ion-input type="text" [(ngModel)]='usuario.NombreUsuario' name='nombreinput' color="light" placeholder="pikachu21@correo.com"></ion-input>
+  <ion-input type="text" [(ngModel)]='usuario.CorreoElectronico' name='nombreinput' color="light" placeholder="pikachu21@correo.com"></ion-input>
   <br/>
   <ion-text color="light">
     <strong>Contraseña</strong>
   </ion-text>
-  <ion-input type="password" [(ngModel)]='usuario.Contra' name='nombreinput' color="light" placeholder="•••••••••••"></ion-input>
+  <ion-input type="password" [(ngModel)]='usuario.contra' name='nombreinput' color="light" placeholder="•••••••••••"></ion-input>
   <br />
 
-  <ion-button expand="block" color="light" fill="solid" (click)='saveNewUsuario()'>Registrar</ion-button><br />
+  <ion-button expand="block" color="light" fill="solid" (click)='saveNewEstudiante()'>Registrar</ion-button><br />
 </ion-content>

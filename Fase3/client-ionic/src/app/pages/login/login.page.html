@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start"> 
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+  
+      <ion-title>Inicio de Sesión</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding>
+      <ion-text>
+        <h1><strong>Bienvenido!</strong></h1>
+        <p>Inicia sesión para hacer uso de todas las características.</p>
+      </ion-text>
+      <br />
+      <ion-text >
+        <strong> Usuario</strong>
+      </ion-text>
+      <ion-input type="text"  placeholder="pikachu21" [(ngModel)]="carnet"></ion-input>
+      <br/>
+      <ion-text >
+        <strong>Contraseña</strong>
+      </ion-text>
+      <ion-input type="password"  placeholder="•••••••••••" [(ngModel)]="contra"></ion-input>
+      <br />
+      <ion-label>Tipo Usuario</ion-label>
+      <ion-select placeholder="Selecciona uno" [(ngModel)]=tipo>
+        <ion-select-option value="Estudiante">Estudiante</ion-select-option>
+        <ion-select-option value="Auxiliar">Auxiliar</ion-select-option>
+      </ion-select>
+   
+      <ion-button expand="block"  fill="solid" (click)="InicioSesion()">Iniciar Sesión</ion-button>
+    </ion-content>
+  
