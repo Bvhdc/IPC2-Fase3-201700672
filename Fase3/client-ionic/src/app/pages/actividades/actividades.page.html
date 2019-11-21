@@ -1,0 +1,25 @@
+<app-menu></app-menu>
+<app-header titulo='Cursos'></app-header>
+
+<ion-content id='principal'>
+    <ion-button (click)="navigateForo()">agregar actividad</ion-button>
+    <ion-list>
+        <ion-item-sliding *ngFor="let actividad of actividades">
+            <ion-item >
+                <ion-label>
+                  <p>
+                    {{actividad.Nombre}}
+                  </p>
+                </ion-label>
+                <ion-label slot="end" text-right>
+                    <p>
+                        {{actividad.NombreCurso}}
+                    </p>
+                </ion-label>
+            </ion-item>
+           
+           
+        </ion-item-sliding>
+        
+      </ion-list>
+</ion-content>

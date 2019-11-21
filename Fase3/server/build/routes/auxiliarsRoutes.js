@@ -13,6 +13,7 @@ class AuxiliarsRoutes {
     config() {
         this.router.get('/', auxiliarsController_1.default.list);
         this.router.get('/:id', auxiliarsController_1.default.getOne);
+        this.router.get('/:carne/:pass', auxiliarsController_1.default.login);
         this.router.post('/', auxiliarsController_1.default.create);
         this.router.delete('/:id', auxiliarsController_1.default.delete);
         this.router.put('/:id', auxiliarsController_1.default.update);

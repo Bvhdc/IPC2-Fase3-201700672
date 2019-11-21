@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start"> 
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Registro de Actividad</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <br />
+
+  <ion-text >
+    <strong>Nombre</strong>
+  </ion-text>
+  <ion-input type="text" [(ngModel)]='actividad.Nombre' name='nombreinput'  placeholder="El tema" ></ion-input>
+  <br/>
+  <ion-text >
+      <strong>Descripcion</strong>
+    </ion-text>
+    <ion-input type="text" [(ngModel)]='actividad.Descripcion' name='nombreinput'  placeholder="El tema" ></ion-input>
+  <br/>
+  <ion-select placeholder="Selecciona uno" [(ngModel)]=actividad.CodigoCurso>
+      <ion-select-option *ngFor="let curso of cursos" value={{curso.CodigoCurso}}>{{curso.NombreCurso}}</ion-select-option>
+    </ion-select>
+    <ion-select placeholder="Selecciona uno" [(ngModel)]=actividad.tipo>
+        <ion-select-option value="Texto">Solo texto</ion-select-option>
+        <ion-select-option value="File">Archivo Adjunto</ion-select-option>
+      </ion-select>
+  <ion-button expand="block"  fill="solid" (click)='saveActividad()'>Registrar</ion-button><br />
+</ion-content>

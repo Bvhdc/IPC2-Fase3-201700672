@@ -1,0 +1,22 @@
+<app-header></app-header>
+<app-menu></app-menu>
+<ion-content id='principal'>
+  <ion-list>
+    <ion-item-sliding *ngFor="let foro of foros">
+        <ion-item (click)='OpenForo(foro.idForo)' >
+            <ion-label>
+              <p>
+                {{foro.Titulo}}
+              </p>
+            </ion-label>
+            <ion-label slot="end" text-right>
+                <p>
+                    Vence  fecha: {{foro.fecha}}
+                </p>
+            </ion-label>
+        </ion-item>
+       
+    </ion-item-sliding>
+    
+  </ion-list>
+</ion-content>

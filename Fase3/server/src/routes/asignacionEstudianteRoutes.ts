@@ -9,7 +9,7 @@ class AsignacionEstudianteRoutes{
     }
 
     config():void{
-        this.router.get('/',asignacionEstudianteController.list);
+        this.router.get('/',asignacionEstudianteController.listall);
         this.router.get('/:id',asignacionEstudianteController.getOne);
         this.router.post('/',asignacionEstudianteController.create)
         this.router.delete('/:id',asignacionEstudianteController.delete)

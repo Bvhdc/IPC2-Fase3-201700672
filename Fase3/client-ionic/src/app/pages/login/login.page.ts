@@ -27,7 +27,7 @@ export class LoginPage implements OnInit {
           this.estudianteService.userlogged = res;
           this.usuario = res;
           if (this.usuario) {
-            this.NavCtrl.navigateForward('/user-tabs');
+            this.NavCtrl.navigateForward('/user-tabs/user');
             console.log(this.estudianteService.userlogged);
           }
         } else {
@@ -45,8 +45,8 @@ export class LoginPage implements OnInit {
           this.auxiliarService.userlogged = res;
           this.usuario = res;
           if (this.usuario) {
-            this.NavCtrl.navigateForward('/aux-tabs');
-            console.log(this.estudianteService.userlogged);
+            this.NavCtrl.navigateForward('/aux');
+            console.log(this.auxiliarService.userlogged);
           }
         } else {
           console.log('funciona, talvez');

@@ -11,7 +11,12 @@ const routes: Routes = [
       {
         path: 'user',
         loadChildren:  () => import('../user/user.module').then( m => m.UserPageModule)
-      }
+      },
+      {
+        path: 'cursos',
+        loadChildren:  () => import('../asignacion-form/asignacion-form.module').then( m => m.AsignacionFormPageModule)
+      },
+
     ]
   }
 ];

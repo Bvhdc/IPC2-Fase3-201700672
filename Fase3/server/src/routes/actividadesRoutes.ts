@@ -9,8 +9,9 @@ class ActividadesRoutes{
     }
 
     config():void{
-        this.router.get('/',actividadesController.list);
-        this.router.get('/:id',actividadesController.getOne);
+        this.router.get('/',actividadesController.listall);
+        this.router.get('/auxiliar/:id',actividadesController.listAux);
+        this.router.get('/user/:id',actividadesController.listUser);
         this.router.post('/',actividadesController.create)
         this.router.delete('/:id',actividadesController.delete)
         this.router.put('/:id',actividadesController.update)

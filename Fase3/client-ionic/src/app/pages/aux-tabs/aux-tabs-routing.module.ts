@@ -6,7 +6,13 @@ import { AuxTabsPage } from './aux-tabs.page';
 const routes: Routes = [
   {
     path: '',
-    component: AuxTabsPage
+    component: AuxTabsPage,
+    children: [
+      {
+        path: 'aux',
+        loadChildren:  () => import('../aux/aux.module').then( m => m.AuxPageModule)
+      }
+    ]
   }
 ];
 

@@ -1,0 +1,28 @@
+
+<app-header></app-header>
+<app-menu></app-menu>
+<ion-content id="principal">
+  <ion-card>
+    <ion-card-header>Foro</ion-card-header>
+    <ion-card-content>
+        <ion-item *ngFor="let c of comments">
+          <ion-label>
+            <p>{{c.comentario}}</p>
+          </ion-label>
+        <ion-label slot="end" text-right>
+          <p>{{c.Nombre}}</p>
+        </ion-label>
+         
+        </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <ion-footer>
+    <ion-toolbar>
+      <ion-input placeholder="Escribe tu mensaje..." [(ngModel)]="comentario.comentario" id="send_message"></ion-input>
+      <ion-button slot="end" shape="round" fill="clear" (click)="saveComment()">Enviar</ion-button>
+    </ion-toolbar>
+  </ion-footer>
+
+
+  
+</ion-content>

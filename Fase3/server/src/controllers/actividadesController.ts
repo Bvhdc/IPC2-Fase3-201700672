@@ -2,19 +2,26 @@ import {Request,Response } from 'express'
 import pool from '../database'
 class ActividadesController{
 
-    public async list (req:Request,res:Response)  {
-       const actividades= await pool.query('SELECT * FROM Actividad');
+    public async listall (req:Request,res:Response)  {
+       const actividades= await pool.query('select * From Actividad');
        res.json(actividades);
     }
 
-    public async getOne (req:Request,res:Response)  {
+    public async listAux (req:Request,res:Response)  {
         const { id }=req.params;
         
-        const users=await pool.query('SELECT * FROM Actividad WHERE CodigoActividad= ?',[id]);
-        if (users.lenght = 1){
-            res.json(users[0]);
-        }else
-        {res.status(404).json({text: 'Actividad Doesnt Exist'});}
+        const users=await pool.query('SELECT Actividad.Nombre,Actividad.tipo,Actividad.Descripcion,Actividad.nota,Curso.NombreCurso FROM Actividad,Curso,asignacionauxiliar WHERE Actividad.CodigoCurso=Curso.CodigoCurso and Actividad.estado !="Vencido" and asignacionauxiliar.CodigoCurso=Curso.CodigoCurso and asignacionauxiliar.CarnetAuxiliar= ?',[id]);
+       
+            res.json(users);
+        
+     }
+     public async listUser (req:Request,res:Response)  {
+        const { id }=req.params;
+        
+        const users=await pool.query('SELECT Actividad.Nombre,Actividad.tipo,Actividad.Descripcion,Actividad.nota,Curso.NombreCurso FROM Actividad,Curso,asignacionestudiante WHERE Actividad.CodigoCurso=Curso.CodigoCurso and Actividad.estado !="Vencido" and asignacionestudiante.CodigoCurso=Curso.CodigoCurso and asignacionestudiante.CarnetEstudiante= ?',[id]);
+       
+            res.json(users);
+        
      }
     public async create(req:Request,res:Response){
         await pool.query('INSERT INTO Actividad set ?',[req.body]);

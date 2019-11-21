@@ -20,16 +20,16 @@ class AsignacionEstudianteController {
             res.json(users);
         });
     }
+    listall(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const users = yield database_1.default.query('SELECT Curso.CodigoCurso,estudiante.CarnetEstudiante,estudiante.Nombre,Curso.NombreCurso,Curso.seccion FROM AsignacionEstudiante,estudiante,Curso where AsignacionEstudiante.CodigoCurso=Curso.CodigoCurso and AsignacionEstudiante.CarnetEstudiante=estudiante.CarnetEstudiante ');
+        });
+    }
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            const users = yield database_1.default.query('SELECT * FROM AsignacionEstudiante WHERE CarnetEstudiante= ?', [id]);
-            if (users.lenght = 1) {
-                res.json(users[0]);
-            }
-            else {
-                res.status(404).json({ text: 'Asignacion Doesnt Exist' });
-            }
+            const users = yield database_1.default.query('SELECT Curso.CodigoCurso,estudiante.CarnetEstudiante,estudiante.Nombre,Curso.NombreCurso,Curso.seccion FROM AsignacionEstudiante,estudiante,Curso where AsignacionEstudiante.CodigoCurso=Curso.CodigoCurso and AsignacionEstudiante.CarnetEstudiante=estudiante.CarnetEstudiante and AsignacionEstudiante.CarnetEstudiante= ? ', [id]);
+            res.json(users);
         });
     }
     create(req, res) {

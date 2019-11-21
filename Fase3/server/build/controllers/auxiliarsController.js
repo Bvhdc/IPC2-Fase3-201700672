@@ -32,6 +32,20 @@ class AuxiliarController {
             }
         });
     }
+    login(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { carne } = req.params;
+            const { pass } = req.params;
+            const user = yield database_1.default.query('SELECT * FROM Auxiliar WHERE CarnetAuxiliar= ? AND Contra= ?', [carne, pass]);
+            console.log(req.params);
+            if (user.lenght = 1) {
+                res.json(user[0]);
+            }
+            else {
+                res.status(404).json({ text: 'User Doesnt Exist' });
+            }
+        });
+    }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             yield database_1.default.query('INSERT INTO Auxiliar set ?', [req.body]);

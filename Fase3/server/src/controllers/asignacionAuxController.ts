@@ -13,11 +13,11 @@ class AsignacionAuxController{
  
     public async getOne (req:Request,res:Response)  {
         const { id }=req.params;
-        const users=await pool.query('SELECT * FROM AsignacionAuxiliar WHERE CarnetAuxiliar= ?',[id]);
-        if (users.lenght = 1){
-            res.json(users[0]);
-        }else
-        {res.status(404).json({text: 'User Doesnt Exist'});}
+        const users=await pool.query('SELECT Curso.CodigoCurso,Auxiliar.CarnetAuxiliar,Auxiliar.Nombre,Curso.NombreCurso,Curso.seccion FROM AsignacionAuxiliar,Auxiliar,Curso where AsignacionAuxiliar.CodigoCurso=Curso.CodigoCurso and AsignacionAuxiliar.CarnetAuxiliar=Auxiliar.CarnetAuxiliar and AsignacionAuxiliar.CarnetAuxiliar= ?',[id]);
+        
+            res.json(users);
+        
+       
      }
     public async create(req:Request,res:Response){
         await pool.query('INSERT INTO AsignacionAuxiliar set ?',[req.body]);

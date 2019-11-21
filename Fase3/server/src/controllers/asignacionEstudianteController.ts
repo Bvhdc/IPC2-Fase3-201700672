@@ -6,14 +6,14 @@ class AsignacionEstudianteController{
        const users= await pool.query('SELECT * FROM AsignacionEstudiante');
        res.json(users);
     }
+    public async listall(req:Request,res:Response){
+        const users=await pool.query('SELECT Curso.CodigoCurso,estudiante.CarnetEstudiante,estudiante.Nombre,Curso.NombreCurso,Curso.seccion FROM AsignacionEstudiante,estudiante,Curso where AsignacionEstudiante.CodigoCurso=Curso.CodigoCurso and AsignacionEstudiante.CarnetEstudiante=estudiante.CarnetEstudiante ')
+    }
 
     public async getOne (req:Request,res:Response)  {
         const { id }=req.params;
-        const users=await pool.query('SELECT * FROM AsignacionEstudiante WHERE CarnetEstudiante= ?',[id]);
-        if (users.lenght = 1){
-            res.json(users[0]);
-        }else
-        {res.status(404).json({text: 'Asignacion Doesnt Exist'});}
+        const users=await pool.query('SELECT Curso.CodigoCurso,estudiante.CarnetEstudiante,estudiante.Nombre,Curso.NombreCurso,Curso.seccion FROM AsignacionEstudiante,estudiante,Curso where AsignacionEstudiante.CodigoCurso=Curso.CodigoCurso and AsignacionEstudiante.CarnetEstudiante=estudiante.CarnetEstudiante and AsignacionEstudiante.CarnetEstudiante= ? ',[id]);
+            res.json(users);
      }
     public async create(req:Request,res:Response){
         await pool.query('INSERT INTO AsignacionEstudiante set ?',[req.body]);

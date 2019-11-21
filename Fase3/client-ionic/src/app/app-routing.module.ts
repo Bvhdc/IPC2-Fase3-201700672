@@ -28,6 +28,30 @@ const routes: Routes = [
     path: 'aux',
     loadChildren: () => import('./pages/aux/aux.module').then( m => m.AuxPageModule)
   },
+  {
+    path: 'asignacion-form',
+    loadChildren: () => import('./pages/asignacion-form/asignacion-form.module').then( m => m.AsignacionFormPageModule)
+  },
+  {
+    path: 'foros/:idCurso',
+    loadChildren: () => import('./pages/foros/foros.module').then( m => m.ForosPageModule)
+  },
+  {
+    path: 'actividades',
+    loadChildren: () => import('./pages/actividades/actividades.module').then( m => m.ActividadesPageModule)
+  },
+  {
+    path: 'foro/:idForo',
+    loadChildren: () => import('./pages/foro/foro.module').then( m => m.ForoPageModule)
+  },
+  {
+    path: 'foro-form/:idCurso',
+    loadChildren: () => import('./pages/foro-form/foro-form.module').then( m => m.ForoFormPageModule)
+  },
+  {
+    path: 'actividad-form',
+    loadChildren: () => import('./pages/actividad-form/actividad-form.module').then( m => m.ActividadFormPageModule)
+  },
 ];
 
 @NgModule({

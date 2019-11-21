@@ -11,7 +11,7 @@ class AsignacionEstudianteRoutes {
         this.config();
     }
     config() {
-        this.router.get('/', asignacionEstudianteController_1.default.list);
+        this.router.get('/', asignacionEstudianteController_1.default.listall);
         this.router.get('/:id', asignacionEstudianteController_1.default.getOne);
         this.router.post('/', asignacionEstudianteController_1.default.create);
         this.router.delete('/:id', asignacionEstudianteController_1.default.delete);

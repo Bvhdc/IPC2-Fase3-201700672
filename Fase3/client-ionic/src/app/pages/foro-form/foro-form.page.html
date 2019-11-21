@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start"> 
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Registro de Foro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <br />
+
+  <ion-text >
+    <strong>Titulo</strong>
+  </ion-text>
+  <ion-input type="text" [(ngModel)]='foro.Titulo' name='nombreinput'  placeholder="El tema" ></ion-input>
+  <br/>
+  <ion-item>
+    <ion-label>Fecha Vencimiento</ion-label>
+    <ion-datetime displayFormat="MM DD YY"  [(ngModel)]='foro.fecha' placeholder="Select Date" max='2025-12-19'></ion-datetime>
+  </ion-item> 
+  <br/>
+  <ion-button expand="block"  fill="solid" (click)='saveForo()'>Registrar</ion-button><br />
+</ion-content>

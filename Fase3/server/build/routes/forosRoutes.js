@@ -11,9 +11,11 @@ class ForosRoutes {
         this.config();
     }
     config() {
-        this.router.get('/', ForosController_1.default.list);
-        this.router.get('/:id', ForosController_1.default.getOne);
+        this.router.get('/', ForosController_1.default.listall);
+        this.router.get('/:id', ForosController_1.default.list);
+        this.router.get('/foro/:id', ForosController_1.default.getOne);
         this.router.post('/', ForosController_1.default.create);
+        this.router.post('/message', ForosController_1.default.createmessage);
         this.router.delete('/:id', ForosController_1.default.delete);
         this.router.put('/:id', ForosController_1.default.update);
     }

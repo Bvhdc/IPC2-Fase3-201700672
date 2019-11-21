@@ -1,0 +1,17 @@
+[
+  {
+    "icon": "list",
+    "name": "Cursos",
+    "redirectTo": "'/user-tabs/user'"
+  },
+  {
+    "icon": "list",
+    "name": "Foros",
+    "redirectTo": "/foros"
+  },
+  {
+    "icon": "list",
+    "name": "Actividades",
+    "redirectTo": "/foros"
+  }
+]

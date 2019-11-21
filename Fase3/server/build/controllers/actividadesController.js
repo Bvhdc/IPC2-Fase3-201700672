@@ -14,22 +14,24 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const database_1 = __importDefault(require("../database"));
 class ActividadesController {
-    list(req, res) {
+    listall(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const actividades = yield database_1.default.query('SELECT * FROM Actividad');
+            const actividades = yield database_1.default.query('select * From Actividad');
             res.json(actividades);
         });
     }
-    getOne(req, res) {
+    listAux(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            const users = yield database_1.default.query('SELECT * FROM Actividad WHERE CodigoActividad= ?', [id]);
-            if (users.lenght = 1) {
-                res.json(users[0]);
-            }
-            else {
-                res.status(404).json({ text: 'Actividad Doesnt Exist' });
-            }
+            const users = yield database_1.default.query('SELECT Actividad.Nombre,Actividad.tipo,Actividad.Descripcion,Actividad.nota,Curso.NombreCurso FROM Actividad,Curso,asignacionauxiliar WHERE Actividad.CodigoCurso=Curso.CodigoCurso and Actividad.estado !="Vencido" and asignacionauxiliar.CodigoCurso=Curso.CodigoCurso and asignacionauxiliar.CarnetAuxiliar= ?', [id]);
+            res.json(users);
+        });
+    }
+    listUser(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const { id } = req.params;
+            const users = yield database_1.default.query('SELECT Actividad.Nombre,Actividad.tipo,Actividad.Descripcion,Actividad.nota,Curso.NombreCurso FROM Actividad,Curso,asignacionestudiante WHERE Actividad.CodigoCurso=Curso.CodigoCurso and Actividad.estado !="Vencido" and asignacionestudiante.CodigoCurso=Curso.CodigoCurso and asignacionestudiante.CarnetEstudiante= ?', [id]);
+            res.json(users);
         });
     }
     create(req, res) {
